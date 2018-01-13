@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+<%= image_tag @post.image.url(:medium) %>
+<p>
+  <div class="tt">
+  <strong>BASLİK:</strong>
+  <%= @post.title %>
+</p>
+
+<p>
+  <strong>MESAJ:</strong>
+  <%= @post.msg %>
+</p>
+
+
+<%= link_to 'DÜZENLE', edit_post_path(@post) %> |
+<%= link_to 'GERİ', posts_path %>
+</div>

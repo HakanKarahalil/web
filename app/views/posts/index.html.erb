@@ -1,0 +1,130 @@
+
+
+<div class="container " >
+  <div class="row " >
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a target="" href="http://www.galatasaray.org/anasayfa"><h1>GALATASARAY</h1></a>
+          
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="btn btn-success navbar-btn btn-circle"><a href="#"><%=t ("ANASAYFA")%></a></li>
+          <li><a href="#"><%=t ("FUTBOL")%></a></li>
+          <li><a href="#"><%=t ("BASKETBOL")%></a></li>
+          <li><a target="" href="http://www.gsstore.org/">GSTORE</a></li>
+          <a href="?locale=tr">English</a>
+          <a href="?locale=en">Turkish</a>
+          <a href="?locale=fr">French</a>
+          
+          <li><%= link_to t('Cikis'), destroy_user_session_path, :method => :delete %></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+ 
+ 
+ <div class="about" id="about">
+    <div class="container">
+    <div class="about-heading">
+      <h2>Hakkında</h2>
+  </div>
+        
+    <div class="row">
+      <div class="col-md-6 about-left">
+        <br><br>
+        <img src="http://img-fanatik.mncdn.com/mnresize/980/565/images/16x9/2018/01/10/5248841.jpg" height="400px" width="560px"/>
+    </div>
+        <br><br><br>
+    <div class="col-md-6 about-right ss">
+      
+        <h3>Galatasaray Odeabank, Oktay Mahmuti ile anlaştı</h3>
+          <p>
+              Erman Kunter ile yollarını ayıran Galatasaray Odeabank, Oktay Mahmuti ile anlaşmaya vardı.
+              7DAYS EuroCup ve Tahincioğlu Basketbol Süper Ligi takımı Galatasaray Odeabank'ın yeni başantrenörü netlik kazandı.
+              Beklentilerin çok uzağında bir sezon geçiren Sarı-Kırmızılı takım, Erman Kunter'den boşalan başantrenörlük koltuğunu Oktay Mahmuti'ye emanet etti.
+              Avrupa'nın önemli basketbol muhabiri David Pick, Galatasaraylı yetkililerin, Oktay Mahmuti ile anlaştıklarını doğruladıklarını yazdı.
+              Cim Bom'un, Mahmuti ile 1.5 yıllık anlaşmaya vardığı belirtildi
+              
+              Kariyerinde birçok takımda görev yapan 49 yaşındaki basketbol antrenörü, 2010-2012 yılları arasında da Galatasaray'da görev yapmışt
+        </p>
+    </div>
+        
+        
+         <div class="clearfix"></div>
+        </div>
+  </div>
+    </div>
+ 
+ 
+  
+  
+  
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-hover bb">
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+        <thead>
+          <tr>
+            <th><%=t ("Title")%></th>
+            <th><%=t ("Msg")%></th>
+            <th colspan="4"></th>
+          </tr>
+        </thead>
+      
+        <tbody>
+          <% @posts.each do |post| %>
+            <tr>
+              <td><%= post.title %></td>
+              <td><%= post.msg %></td>
+              <td><%= image_tag post.image.url(:thumb) %></td>
+              <td><%= link_to t('Show'), post %></td>
+              <td><%= link_to t('Edit'), edit_post_path(post) %></td>
+              <td><%= link_to t('Destroy'), post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      
+      <br>
+      
+      
+      <%= link_to t('Yeni yorum'), new_post_path, :action => "index",:class => "btn btn-inverse"%>
+  
+      
+    </div>
+    <div class="col-md-5">
+      <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       
+    
+      
+  </div> </div>
+  
+  
+
+<div class="degisken">
+<% request.env.each do |key, value| %>
+ <strong><%= key %></strong> => <%= value %><br/>
+<% end %>
+</div>
+
+<div class="row">
+ 
+    <footer class="container-fluid bg-4 text-center">
+      <div class="well">
+        <p>HAKAN KARAHALİL</p>
+      </div>
+    </footer>
+  </div>
+</div>
+</div>
